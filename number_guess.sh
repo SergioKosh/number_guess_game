@@ -41,11 +41,11 @@ ONE_TRY(){
 }
 
 GUESSING_GAME() {
-TRIES=0
+TRIES=1
 THE_NUMBER="NOT FOUND"
 RANDOM_NUMBER=$(($RANDOM % 1000 + 1))
 
-echo "Enter your username"
+echo "Enter your username:"
 read USER_NAME
 USER=$($PSQL "SELECT username, games_played, best_game FROM users WHERE username='$USER_NAME'")
 if [[ -z $USER ]]
